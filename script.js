@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.15 // Trigger animation when 15% of the section is visible
+    threshold: 0.10// Trigger animation when 15% of the section is visible
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
-      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+      if (pageYOffset>= sectionTop - sectionHeight / 3) {
         current = section.getAttribute('id');
       }
     });
